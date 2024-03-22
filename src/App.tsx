@@ -3,9 +3,13 @@ import axios from "axios";
 import { Panel } from "./components/Panel";
 import "./App.css";
 import { SwitchLang } from "./components/SwitchLang";
+// import { useDispatch, useSelector } from "react-redux";
+// import { usersSlice } from "./reducers/usersSlice";
+import { Users } from "./components/Users";
 
 function App() {
   const [data, setData] = useState<{ title: string } | null>(null);
+  // const users = useSelector((state: any) => state.userstt);
 
   useEffect(() => {
     let mounted = true;
@@ -37,11 +41,13 @@ function App() {
 
   return (
     <div className="App">
-        From API {data?.title}
-        <hr />
-        <Panel />
-        <hr />
-        <SwitchLang/>
+      From API {data?.title}
+      <hr />
+      <Panel />
+      <hr />
+      <SwitchLang />
+      <hr />
+      <Users />
     </div>
   );
 }
