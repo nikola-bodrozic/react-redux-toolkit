@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Panel } from "./components/Panel";
 import "./App.css";
+import { SwitchLang } from "./components/SwitchLang";
 
 function App() {
   const [data, setData] = useState<{ title: string } | null>(null);
@@ -35,7 +37,11 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">From API {data?.title}</header>
+        From API {data?.title}
+        <hr />
+        <Panel />
+        <hr />
+        <SwitchLang/>
     </div>
   );
 }
