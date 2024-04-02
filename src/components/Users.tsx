@@ -1,19 +1,27 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addName, removeName } from "../reducers/usersSlice";
+import { useState } from "react";
 
 export const Users = () => {
-  const users = useSelector((state: any) => state.userstt);
+  const [userName, setUserName] = useState("")
+
   const dispatch = useDispatch();
+  
   function add() {
-    dispatch(addName({ name: "some name" }));
+    dispatch(addName({ name: userName }));
   }
 
   function remove() {
     dispatch(removeName());
   }
+
+  function handleChange(event: any) {
+    setUserName(event.target.value)
+  }
+
   return (
     <>
-      {JSON.stringify(users)} <br />
+      <input name="firstname" onChange={handleChange} />
       <button onClick={add}>Add</button>
       <button onClick={remove}>Remove</button>
     </>

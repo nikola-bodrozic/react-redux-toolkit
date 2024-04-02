@@ -3,13 +3,11 @@ import axios from "axios";
 import { Panel } from "./components/Panel";
 import "./App.css";
 import { SwitchLang } from "./components/SwitchLang";
-// import { useDispatch, useSelector } from "react-redux";
-// import { usersSlice } from "./reducers/usersSlice";
 import { Users } from "./components/Users";
+import { UsersList } from "./components/UsersList";
 
 function App() {
   const [data, setData] = useState<{ title: string } | null>(null);
-  // const users = useSelector((state: any) => state.userstt);
 
   useEffect(() => {
     let mounted = true;
@@ -48,6 +46,8 @@ function App() {
       <SwitchLang />
       <hr />
       <Users />
+      <hr/>
+      <UsersList />
     </div>
   );
 }

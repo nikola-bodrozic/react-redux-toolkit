@@ -18,7 +18,7 @@ export const usersSlice = createSlice({
   initialState,
   reducers: {
     addName: (state, action: PayloadAction<{ name: string }>) => {
-      state.users.push({ id: state.users.length, name: "some name" });
+      state.users.push({ id: state.users.length, name: action.payload.name});
     },
     removeName: (state) => {
       state.users.pop();
